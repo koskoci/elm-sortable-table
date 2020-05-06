@@ -265,25 +265,25 @@ simpleTheadHelp ( name, status, click ) =
                 Sortable selected ->
                     [ Html.text name
                     , if selected then
-                        darkGrey "↓"
+                        darkGrey "▼"
 
                       else
-                        lightGrey "↓"
+                        lightGrey "▼"
                     ]
 
                 Reversible Nothing ->
                     [ Html.text name
-                    , lightGrey "↕"
+                    , lightGrey ""
                     ]
 
                 Reversible (Just isReversed) ->
                     [ Html.text name
                     , darkGrey
                         (if isReversed then
-                            "↑"
+                            "▲"
 
                          else
-                            "↓"
+                            "▼"
                         )
                     ]
     in
