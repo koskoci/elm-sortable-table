@@ -265,29 +265,29 @@ simpleTheadHelp ( name, status, click ) =
                 Sortable selected ->
                     [ Html.text name
                     , if selected then
-                        darkGrey "▼"
+                        darkGrey (nbsp ++ "▼")
 
                       else
-                        lightGrey "▼"
+                        lightGrey (nbsp ++ "▼")
                     ]
 
                 Reversible Nothing ->
                     [ Html.text name
-                    , lightGrey "↕"
+                    , lightGrey (nbsp ++ "↕")
                     ]
 
                 Reversible (Just isReversed) ->
                     [ Html.text name
                     , darkGrey
                         (if isReversed then
-                            "▲"
+                            nbsp ++ "▲"
 
                          else
-                            "▼"
+                            nbsp ++ "▼"
                         )
                     ]
     in
-    Html.th [ click ] content
+    Html.th [ Attr.id "sortingIndicator", click ] content
 
 
 nbsp : String
@@ -297,7 +297,7 @@ nbsp =
 
 darkGrey : String -> Html msg
 darkGrey symbol =
-    Html.span [ Attr.style "color" "#555" ] [ Html.text (nbsp ++ symbol) ]
+    Html.span [ Attr.style "color" "inherit" ] [ Html.text (nbsp ++ symbol) ]
 
 
 lightGrey : String -> Html msg
