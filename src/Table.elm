@@ -273,7 +273,7 @@ simpleTheadHelp ( name, status, click ) =
 
                 Reversible Nothing ->
                     [ Html.text name
-                    , lightGrey ""
+                    , lightGrey "↕"
                     ]
 
                 Reversible (Just isReversed) ->
